@@ -5,24 +5,32 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-puts "Cadastrando as moedas..."
 
-Coin.create!(
+spinner = TTY::Spinner.new("[:spinner] Cadastrando as moedas...")
+spinner.auto_spin
+coins = [
+  { 
     description: "Bitcoin",
     acronym: "BTC",
     url: "https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-bitcoin-logo-design-template-png-image_4749408.png"
-)
+  },
 
-Coin.create!(
+  {
     description: "Ethereum",
     acronym: "ETH",
     url: "https://img1.gratispng.com/20180516/ouw/kisspng-ethereum-cryptocurrency-blockchain-logo-eos-io-crypto-5afc9ab9b20d86.8643914515265041217293.jpg"
-)
-
-Coin.create!(
+  },
+  
+  {
     description: "Dash",
     acronym: "DSH",
     url: "https://www.pngall.com/wp-content/uploads/10/Dash-Crypto-Logo-PNG-Cutout.png"
-)
+  }
 
-puts "Moedas cadastradas com sucesso..."
+]
+
+coins.each do |coin| 
+  Coin.find_or_create_by!(coin)
+end
+
+spinner.success("(Moedas cadastradas com sucesso...)")
