@@ -26,7 +26,7 @@ namespace :dev do
           description: "Bitcoin",
           acronym: "BTC",
           url: "https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-bitcoin-logo-design-template-png-image_4749408.png",
-          mining_type: MiningType.where(acronym: 'PoW')
+          mining_type: MiningType.find_by(acronym: 'PoW')
         },
 
         {
