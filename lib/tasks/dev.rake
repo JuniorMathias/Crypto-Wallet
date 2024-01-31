@@ -25,29 +25,34 @@ namespace :dev do
         { 
           description: "Bitcoin",
           acronym: "BTC",
-          url: "https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-bitcoin-logo-design-template-png-image_4749408.png"
+          url: "https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-bitcoin-logo-design-template-png-image_4749408.png",
+          mining_type: MiningType.where(acronym: 'PoW')
         },
 
         {
           description: "Ethereum",
           acronym: "ETH",
-          url: "https://img1.gratispng.com/20180516/ouw/kisspng-ethereum-cryptocurrency-blockchain-logo-eos-io-crypto-5afc9ab9b20d86.8643914515265041217293.jpg"
+          url: "https://img1.gratispng.com/20180516/ouw/kisspng-ethereum-cryptocurrency-blockchain-logo-eos-io-crypto-5afc9ab9b20d86.8643914515265041217293.jpg",
+          mining_type: MiningType.all.sample
         },
         
         {
           description: "Dash",
           acronym: "DSH",
-          url: "https://www.pngall.com/wp-content/uploads/10/Dash-Crypto-Logo-PNG-Cutout.png"
+          url: "https://www.pngall.com/wp-content/uploads/10/Dash-Crypto-Logo-PNG-Cutout.png",
+          mining_type: MiningType.all.sample
         },
         { 
           description: "Iota",
           acronym: "IOT",
-          url: "https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png"
+          url: "https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png",
+          mining_type: MiningType.all.sample
         },
         { 
           description: "ZCash",
           acronym: "ZEC",
-          url: "https://www.cryptocompare.com/media/351360/zec.png"
+          url: "https://www.cryptocompare.com/media/351360/zec.png",
+          mining_type: MiningType.all.sample
         }
 
       ]
